@@ -1,0 +1,109 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5e5e5; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+/* Gradient Animation */
+.gradient-animation {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px); /* Extend beyond edges */
+    height: calc(100% + 20px); /* Extend beyond edges */
+    background: linear-gradient(45deg, #00c6ff, #0072ff, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite; /* Adjust animation duration here */
+    z-index: -1; /* Place behind other content */
+    border-radius: 15px; /* Rounded corners to match chat container */
+}
+
+/* Gradient Animation Keyframes */
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Chat Container */
+.chat-container {
+    width: 90%; /* Wider width for chat area */
+    max-width: 1200px; /* Increased maximum width */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff; /* White background for chat area */
+    border: 6px solid; /* Initial border width for gradient */
+    border-image: linear-gradient(to right, #00c6ff, #0072ff, #6a11cb, #2575fc); /* Gradient border with blue, cyan, and purple */
+    border-image-slice: 1; /* Ensure gradient covers the border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better separation */
+    position: relative; /* Position relative for z-index stacking */
+}
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    padding: 20px; /* Increased padding for larger chat area */
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9; /* Light gray background for chat messages */
+    color: #333; /* Dark gray text for readability */
+    font-size: 18px; /* Larger text for better readability */
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff; /* White background for input area */
+    padding: 15px; /* Increased padding for larger input area */
+}
+
+/* Input Field */
+#chat-input {
+    flex: 1;
+    padding: 15px; /* Increased padding for larger input area */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px; /* Larger text for better readability */
+}
+
+/* Send Button */
+.send-button {
+    background-color: #333; /* Dark background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px; /* Larger button for better click area */
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px; /* Larger text for button */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Send Button Hover Effect */
+.send-button:hover {
+    background-color: #555; /* Slightly lighter black on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Send Button Focus Effect */
+.send-button:focus {
+    outline: none; /* Remove default outline */
+}
